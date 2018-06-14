@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e327ebc6e72c3dcac7e781d2e1d5c9cf8f5f7cfb51251eea1358e2b224b5cfac"
+            "sha256": "303d96ecfdc187d4d01205c0000dfd8b2e85213d5d44d6a3c81df4f827e8b101"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -14,7 +14,16 @@
             }
         ]
     },
-    "default": {},
+    "default": {
+        "pymysql": {
+            "hashes": [
+                "sha256:2e77a2a193b1d21d51934c4ca055c88971eb6c6fc6e381b428c081bc14b215f8",
+                "sha256:34e19bfff13e8b2ffc38a68f9ad064609d48f3d46320e8ab8184af527e662629"
+            ],
+            "index": "aliyun",
+            "version": "==0.8.1"
+        }
+    },
     "develop": {
         "astroid": {
             "hashes": [

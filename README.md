@@ -9,3 +9,8 @@ brew install pipenv
 
 pipenv --three
 ```
+
+## doc
+
+* [aiohttp](https://aiohttp.readthedocs.io/en/stable/)
+* [pymysql](https://pymysql.readthedocs.io/en/latest/)

@@ -3,9 +3,12 @@ url = "https://mirrors.aliyun.com/pypi/simple/"
 name = "aliyun"
 
 [packages]
+pymysql = "*"
+pyyaml = "*"
 
 [dev-packages]
 pylint = "*"
+"autopep8" = "*"
 
 [requires]
 python_version = "3.6"
