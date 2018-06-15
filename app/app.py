@@ -1,21 +1,28 @@
-import logging
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import os
 import json
 import time
-import asyncio
+import logging
 from datetime import datetime
+import asyncio
+from flask import Flask, session, redirect, url_for, escape, request, jsonify
 
-import yaml
-from aiohttp import web
+from config import config
+import db
 
 logging.basicConfig(level=logging.WARN)
+print(config.get_config())
 
 
-def index(req):
-    return web.Response(body='<h1>blog</h1>')
+db.create_pool()
+# db.execute('INSERT INTO `blog`.`user` (`username`,`password`) VALUES (?,?);',
+#            ('admin', 'admin'))
+app = Flask(__name__)
 
 
-app = web.Application()
-
-# app.add_routes()
-web.run_app(app)
+@app.route('/', methods=['GET'])
+def index():
+    data = db.query('select * from user')
+    return jsonify(data)

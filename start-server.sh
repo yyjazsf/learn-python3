@@ -1,4 +1,7 @@
 
-source venv/bin/activate
+source $(pipenv --venv)/bin/activate
 
-python src/app.py
+# export FLASK_DEBUG=1
+export FLASK_APP=app/app.py
+
+flask run --host=127.0.0.1 --port=3000 --debugger

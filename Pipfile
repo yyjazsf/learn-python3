@@ -5,6 +5,12 @@ name = "aliyun"
 [packages]
 pymysql = "*"
 pyyaml = "*"
+flask = "*"
+flask-restful = "*"
+flask-httpauth = "*"
+passlib = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
 
 [dev-packages]
 pylint = "*"

@@ -1,6 +1,6 @@
 # learn-python3
 
-learn python3,then learn AI, 23333
+learn python3
 
 ## init
 
@@ -8,6 +8,12 @@ learn python3,then learn AI, 23333
 brew install pipenv
 
 pipenv --three
+
+pipenv install
+
+chmod +x start-server.sh
+./start-server.sh
+
 ```
 
 ## doc
