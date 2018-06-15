@@ -16,6 +16,10 @@ chmod +x start-server.sh
 
 ```
 
+## 参考
+
+* [flask 插件汇总](https://wizardforcel.gitbooks.io/flask-extension-docs/content/index.html)
+
 ## doc
 
 * [aiohttp](https://aiohttp.readthedocs.io/en/stable/)

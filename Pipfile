@@ -7,10 +7,10 @@ pymysql = "*"
 pyyaml = "*"
 flask = "*"
 flask-restful = "*"
-flask-httpauth = "*"
 passlib = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
+flask-login = "*"
 
 [dev-packages]
 pylint = "*"
