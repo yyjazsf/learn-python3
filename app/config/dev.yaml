@@ -1,4 +1,8 @@
 
+debug: True
+
 host: "www.yingyj.com"
 
-author: "yingyujia"
+author: "yingyujia <admin@yingyj.com>"
+
+database: "mysql+pymysql://root@127.0.0.1:3306/blog"
