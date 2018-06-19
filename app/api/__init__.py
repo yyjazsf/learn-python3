@@ -6,15 +6,12 @@ api_root = Blueprint('api', __name__, url_prefix='/api')
 api = Api(api_root)
 
 
-class Home(Resource):
-    def get(self):
-        return {'hello': 'world'}
-
+class Login(Resource):
     def post(self):
         return {'methon': 'post'}
 
 
-api.add_resource(Home, '/')
+api.add_resource(Login, '/login')
 
 
 class User(Resource):
@@ -22,7 +19,7 @@ class User(Resource):
         return {'url': 'get /user'}
 
 
-api.add_resource(User, '/user')
+api.add_resource(User, '/users')
 
 
 app.register_blueprint(api_root)

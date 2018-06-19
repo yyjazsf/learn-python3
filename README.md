@@ -21,6 +21,7 @@ chmod +x start-server.sh
 
 ## doc
 
-- [flask sqlalchemy](http://flask-sqlalchemy.pocoo.org/2.3/quickstart/#a-minimal-application)
+- [orm-flask sqlalchemy](http://flask-sqlalchemy.pocoo.org/2.3/quickstart/#a-minimal-application)
 - [aiohttp](https://aiohttp.readthedocs.io/en/stable/)
 - [pymysql](https://pymysql.readthedocs.io/en/latest/)
+- [sphinx 文档生成工具](http://www.sphinx-doc.org/en/master/contents.html)
