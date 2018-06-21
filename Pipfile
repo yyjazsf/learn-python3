@@ -10,7 +10,6 @@ flask-restful = "*"
 passlib = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
-flask-login = "*"
 
 [dev-packages]
 pylint = "*"

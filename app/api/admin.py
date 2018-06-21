@@ -1,9 +1,8 @@
 from flask import Blueprint
 from flask_restful import Resource, Api
 
-from .. import app
-admin = Blueprint('admin', __name__, url_prefix='/admin')
-api = Api(admin)
+admin_blueprint = Blueprint('admin', __name__, url_prefix='/admin')
+api = Api(admin_blueprint)
 
 
 class Home(Resource):
@@ -15,6 +14,3 @@ class Home(Resource):
 
 
 api.add_resource(Home, '/')
-
-
-app.register_blueprint(admin)
