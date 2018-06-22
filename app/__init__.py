@@ -1,6 +1,6 @@
 import logging
-from datetime import datetime
-from flask import Flask, session, redirect, url_for, escape, request, jsonify
+
+from flask import Flask
 from flask_httpauth import HTTPTokenAuth
 from flask_sqlalchemy import SQLAlchemy
 
@@ -13,12 +13,14 @@ logging.basicConfig(level=logging.WARN)
 app = Flask(__name__)
 auth = HTTPTokenAuth()
 
-from .api import api_blueprint, admin_blueprint
-
 # can't use conf.database
-app.config['SQLALCHEMY_DATABASE_URI'] = conf['database']
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = conf['database']['SQLALCHEMY_DATABASE_URI']
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = conf['database']['SQLALCHEMY_TRACK_MODIFICATIONS']
 db = SQLAlchemy(app)
+
+from . import models
+
+from .api import api_blueprint, admin_blueprint
 
 # init router
 app.register_blueprint(api_blueprint)
