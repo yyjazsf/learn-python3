@@ -16,6 +16,7 @@ auth = HTTPTokenAuth()
 # can't use conf.database
 app.config['SQLALCHEMY_DATABASE_URI'] = conf['database']['SQLALCHEMY_DATABASE_URI']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = conf['database']['SQLALCHEMY_TRACK_MODIFICATIONS']
+app.config['SQLALCHEMY_POOL_RECYCLE'] = conf['database']['SQLALCHEMY_POOL_RECYCLE']
 db = SQLAlchemy(app)
 
 from . import models

@@ -21,3 +21,11 @@ class Init(Resource):
 
 
 api.add_resource(Init, '/init')
+
+
+class Reset(Resource):
+    def get(self):
+        db.drop_all()
+
+
+api.add_resource(Reset, '/reset')
