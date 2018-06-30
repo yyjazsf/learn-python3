@@ -58,7 +58,11 @@ User_Role = db.Table(
 class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(50), nullable=False, default='123')
+    telphone = db.Column(db.String(14))
     email = db.Column(db.String(50), unique=True, nullable=True)
+    real_name = db.Column(db.String(50))
+    card_number = db.Column(db.String(50))
     sex = db.Column(db.Integer, nullable=True)
     create_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
