@@ -6,7 +6,7 @@ host: "www.yingyj.com"
 author: "yingyujia <admin@yingyj.com>"
 
 database:
-  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://root:1@127.0.0.1:3306/blog?charset=utf8mb4"
+  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://root:1@127.0.0.1:3306/blog?charset=UTF8MB4"
   SQLALCHEMY_TRACK_MODIFICATIONS: true
   SQLALCHEMY_POOL_RECYCLE: 3000
 

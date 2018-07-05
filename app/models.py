@@ -1,4 +1,5 @@
 from datetime import datetime
+from marshmallow import Schema, fields, ValidationError
 from app import db
 
 """
@@ -8,8 +9,10 @@ todo: some table use UUID?
 
 Role_Permission = db.Table(
     'role_permission',
-    db.Column('role_id', db.Integer, db.ForeignKey('role.role_id'), primary_key=True, nullable=False),
-    db.Column('permission_id', db.Integer, db.ForeignKey('permission.permission_id'), primary_key=True, nullable=False)
+    db.Column('role_id', db.Integer, db.ForeignKey(
+        'role.role_id'), primary_key=True, nullable=False),
+    db.Column('permission_id', db.Integer, db.ForeignKey(
+        'permission.permission_id'), primary_key=True, nullable=False)
 )
 
 
@@ -36,7 +39,8 @@ class Object(db.Model):
 class Permission(db.Model):
     permission_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     permission_name = db.Column(db.String(50), unique=True, nullable=False)
-    object_id = db.Column(db.Integer, db.ForeignKey('object.object_id'), nullable=False)
+    object_id = db.Column(db.Integer, db.ForeignKey(
+        'object.object_id'), nullable=False)
 
     operations = db.Column(db.String(50), nullable=False, default='crud')
 
@@ -50,8 +54,10 @@ class Permission(db.Model):
 
 User_Role = db.Table(
     'user_role',
-    db.Column('role_id', db.Integer, db.ForeignKey('role.role_id'), primary_key=True, nullable=False),
-    db.Column('user_id', db.Integer, db.ForeignKey('user.user_id'), primary_key=True, nullable=False)
+    db.Column('role_id', db.Integer, db.ForeignKey(
+        'role.role_id'), primary_key=True, nullable=False),
+    db.Column('user_id', db.Integer, db.ForeignKey(
+        'user.user_id'), primary_key=True, nullable=False)
 )
 
 
@@ -64,7 +70,8 @@ class User(db.Model):
     real_name = db.Column(db.String(50))
     card_number = db.Column(db.String(50))
     sex = db.Column(db.Integer, nullable=True)
-    create_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    create_time = db.Column(db.DateTime, nullable=False,
+                            default=datetime.utcnow)
 
     role_id = db.relationship(
         'Role',
@@ -75,3 +82,9 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
+
+class UserSchema(Schema):
+    user_id = fields.Integer()
+    email = fields.Email()
+    real_name = fields.String()

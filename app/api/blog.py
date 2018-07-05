@@ -46,7 +46,6 @@ class SignUp(Resource):
 api.add_resource(SignUp, '/signup')
 
 
-# need auth
 class User(Resource):
     @auth.login_required
     def get(self):

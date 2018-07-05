@@ -12,10 +12,11 @@ sqlalchemy = "*"
 flask-sqlalchemy = "*"
 flask-httpauth = "*"
 python-dotenv = "*"
+marshmallow = "*"
 
 [dev-packages]
 pylint = "*"
-"autopep8" = "*"
+autopep8 = "*"
 sphinx = "*"
 
 [requires]
